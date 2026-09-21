@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #ffffff;
+
+    background-image:
+        linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+        linear-gradient(to bottom, #f0f0f0 1px, transparent 1px),
+        radial-gradient(
+            circle 800px at 100% 200px,
+            #d5c5ff,
+            transparent
+        );
+
+    background-size:
+        96px 64px,
+        96px 64px,
+        100% 100%;
+}
