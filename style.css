@@ -1,19 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #ffffff;
 
-    background-image:
-        linear-gradient(to right, #f0f0f0 1px, transparent 1px),
-        linear-gradient(to bottom, #f0f0f0 1px, transparent 1px),
+    background:
+        radial-gradient(circle at 50% 0%, #f8e8e8 0%, transparent 45%),
+        #f5eeee;
+
+    color: #33292b;
+}
+
+header {
+    padding: 18px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 4px 15px rgba(90, 45, 55, 0.12);
+
+    background: linear-gradient(
+    90deg,
+    #f8d7df 0%,
+    #e9a9b9 50%,
+    #c9788e 100%
+    
+);
+}
+header p {
+    margin-left: 30px;
+}
+nav {
+    display: flex;
+    gap: 25px;
+    margin-right: 30px;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+    color: black;
+}
+header a:hover {
+    opacity: 0.7;
+}
+
+.icon {
+
+    height: 100%;
+    width: 100%;
+    max-height: 100px;
+    max-width: 100px;
+    object-fit: contain;
+}
+/* =========================
+   CARTA
+========================= */
+
+
+
+.letter-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 20px;
+}
+
+.letter {
+    width: min(720px, 100%);
+
+    background: #fffdf8;
+
+    border: 1px solid #eadfd5;
+
+    box-shadow:
+        0 25px 60px rgba(75, 45, 50, 0.12),
+        0 5px 15px rgba(75, 45, 50, 0.06);
+
+    position: relative;
+    
+}
+
+
+/* Pequena textura visual no papel */
+
+.letter::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
         radial-gradient(
-            circle 800px at 100% 200px,
-            #d5c5ff,
-            transparent
+            circle at 20% 20%,
+            rgba(120, 80, 60, 0.035),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(120, 80, 60, 0.025),
+            transparent 30%
         );
+}
 
-    background-size:
-        96px 64px,
-        96px 64px,
-        100% 100%;
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.letter-content {
+    padding: 70px 70px 75px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+    line-height: 1.9;
+
+    color: #3d3335;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.letter h1 {
+    margin: 0 0 55px;
+
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    color: #704b56;
+}
+
+
+/* =========================
+   PARÁGRAFOS
+========================= */
+
+.letter p {
+    margin: 0 0 28px;
+}
+
+
+/* Primeiro "Meu amor" */
+
+.letter-content > p:first-of-type {
+    font-size: 19px;
+    color: #704b56;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.letter-ending {
+    margin-top: 55px !important;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #704b56;
+}
+
+.letter-signature {
+    margin-top: 50px;
+
+    text-align: right;
+
+    font-size: 18px;
+
+    color: #594247;
+}
+
+.letter-signature p {
+    margin: 4px 0;
+}
+
+.letter h1::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 2px;
+
+    margin: 15px auto 0;
+
+    background: #d58b9d;
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .letter-section {
+        padding: 60px 15px;
+    }
+
+    .letter-content {
+        padding: 45px 28px 50px;
+
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .letter h1 {
+        margin-bottom: 40px;
+
+        font-size: 27px;
+    }
+
+    .letter p {
+        margin-bottom: 24px;
+    }
+
 }
