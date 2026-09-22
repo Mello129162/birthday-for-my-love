@@ -1,0 +1,638 @@
+/* =========================
+   MOMENTOS
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+header {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    padding: 18px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        90deg,
+        #f8d7df 0%,
+        #e9a9b9 50%,
+        #c9788e 100%
+    );
+
+    box-shadow:
+        0 4px 15px rgba(90, 45, 55, 0.12);
+}
+
+header p {
+    margin-left: 30px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    margin-right: 30px;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+header a:hover {
+    opacity: 0.7;
+}
+
+.moments-page {
+    overflow: hidden;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.moments-intro {
+    min-height: 75vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 25px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.intro-content {
+    width: min(680px, 90%);
+
+    position: relative;
+    z-index: 2;
+}
+
+.intro-content > span {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    color: #9b5b6d;
+}
+
+.intro-content h1 {
+    margin: 15px 0 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(52px, 8vw, 88px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    color: #704b56;
+}
+
+.intro-content p {
+    max-width: 540px;
+
+    margin: auto;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #594247;
+}
+
+
+/* =========================
+   DECORAÇÕES
+========================= */
+
+.moment-decor {
+    position: absolute;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 1;
+}
+
+.decor-bonnie {
+    width: 125px;
+
+    left: 9%;
+    top: 18%;
+
+    transform: rotate(-13deg);
+}
+
+.decor-gus {
+    width: 105px;
+
+    right: 10%;
+    top: 22%;
+
+    transform: rotate(14deg);
+}
+
+.decor-heart {
+    width: 75px;
+
+    left: 17%;
+    bottom: 13%;
+
+    transform: rotate(9deg);
+}
+
+
+/* =========================
+   PAREDE DE MEMÓRIAS
+========================= */
+
+.memory-wall {
+    width: min(1100px, 92%);
+
+    min-height: 1350px;
+
+    position: relative;
+
+    margin: 0 auto;
+
+    padding: 100px 20px 150px;
+}
+
+
+/* =========================
+   FOTOS
+========================= */
+
+.memory {
+    position: absolute;
+
+    width: 260px;
+
+    padding: 12px 12px 18px;
+
+    background: #fffdf8;
+
+    box-shadow:
+        0 18px 45px rgba(75, 45, 50, 0.16);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    z-index: 2;
+}
+
+.memory:hover {
+    transform:
+        rotate(0deg)
+        translateY(-8px)
+        scale(1.03);
+
+    box-shadow:
+        0 25px 55px rgba(75, 45, 50, 0.22);
+
+    z-index: 5;
+}
+
+.memory img {
+    width: 100%;
+
+    height: 230px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.memory p {
+    margin: 13px 5px 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    color: #704b56;
+
+    text-align: center;
+}
+
+
+/* =========================
+   POSIÇÕES
+========================= */
+
+.memory-1 {
+    left: 7%;
+    top: 80px;
+
+    transform: rotate(-7deg);
+}
+
+.memory-2 {
+    right: 8%;
+    top: 25px;
+
+    transform: rotate(6deg);
+}
+
+.memory-3 {
+    left: 37%;
+    top: 280px;
+
+    transform: rotate(3deg);
+}
+
+.memory-4 {
+    left: 9%;
+    top: 550px;
+
+    transform: rotate(8deg);
+}
+
+.memory-5 {
+    right: 9%;
+    top: 520px;
+
+    transform: rotate(-6deg);
+}
+
+.memory-6 {
+    left: 38%;
+    top: 760px;
+
+    transform: rotate(-4deg);
+}
+
+
+/* NOVA IMAGEM */
+
+.memory-7 {
+    right: 34%;
+    top: 1030px;
+
+    transform: rotate(7deg);
+}
+
+
+/* =========================
+   PEQUENAS DECORAÇÕES
+========================= */
+
+.wall-heart,
+.wall-star {
+    position: absolute;
+
+    font-family: Georgia, serif;
+
+    color: #c9788e;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.wall-heart {
+    font-size: 34px;
+}
+
+.wall-star {
+    font-size: 30px;
+}
+
+.heart-1 {
+    top: 190px;
+    left: 31%;
+
+    transform: rotate(-15deg);
+}
+
+.heart-2 {
+    top: 610px;
+    left: 48%;
+
+    font-size: 25px;
+
+    transform: rotate(12deg);
+}
+
+.heart-3 {
+    bottom: 90px;
+    right: 20%;
+
+    transform: rotate(-10deg);
+}
+
+.star-1 {
+    top: 430px;
+    right: 28%;
+
+    transform: rotate(15deg);
+}
+
+.star-2 {
+    top: 710px;
+    left: 27%;
+
+    transform: rotate(-10deg);
+}
+
+
+/* =========================
+   FUTURO
+========================= */
+
+.future {
+    position: relative;
+
+    padding: 130px 20px 150px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.future-title {
+    position: relative;
+
+    z-index: 2;
+}
+
+.future-title > span {
+    font-size: 28px;
+
+    color: #c9788e;
+}
+
+.future-title h2 {
+    margin: 12px 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    color: #704b56;
+}
+
+.future-title p {
+    max-width: 520px;
+
+    margin: 0 auto 60px;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #594247;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.future-cards {
+    width: min(1050px, 90%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.future-card {
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #171315;
+
+    color: white;
+
+    box-shadow:
+        0 20px 40px rgba(40, 20, 25, 0.18);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.future-card:hover {
+    transform: translateY(-8px);
+}
+
+.future-card > span {
+    margin-bottom: 15px;
+
+    font-size: 25px;
+
+    color: #e6a3b3;
+}
+
+.future-card h3 {
+    margin: 0 0 15px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 29px;
+
+    font-weight: 500;
+}
+
+.future-card p {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .moments-intro {
+        min-height: 70vh;
+
+        padding: 80px 20px;
+    }
+
+    .intro-content h1 {
+        font-size: 52px;
+    }
+
+    .intro-content p {
+        font-size: 16px;
+    }
+
+    .moment-decor {
+        opacity: 0.8;
+    }
+
+    .decor-bonnie {
+        width: 85px;
+        left: 3%;
+    }
+
+    .decor-gus {
+        width: 75px;
+        right: 3%;
+    }
+
+    .decor-heart {
+        width: 55px;
+        left: 8%;
+    }
+
+
+    /* MEMÓRIAS */
+
+    .memory-wall {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 40px 20px 100px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 45px;
+    }
+
+    .memory {
+        position: relative;
+
+        inset: auto !important;
+
+        width: min(290px, 88vw);
+    }
+
+    .memory img {
+        height: auto;
+
+        max-height: 300px;
+    }
+
+    .memory-1 {
+        transform: rotate(-5deg);
+    }
+
+    .memory-2 {
+        transform: rotate(5deg);
+    }
+
+    .memory-3 {
+        transform: rotate(-3deg);
+    }
+
+    .memory-4 {
+        transform: rotate(6deg);
+    }
+
+    .memory-5 {
+        transform: rotate(-5deg);
+    }
+
+    .memory-6 {
+        transform: rotate(4deg);
+    }
+
+    .memory-7 {
+        transform: rotate(-6deg);
+    }
+
+    .wall-heart,
+    .wall-star {
+        display: none;
+    }
+
+
+    /* FUTURO */
+
+    .future {
+        padding: 90px 20px 110px;
+    }
+
+    .future-title h2 {
+        font-size: 40px;
+    }
+
+    .future-cards {
+        grid-template-columns: 1fr;
+
+        width: min(100%, 350px);
+    }
+
+    .future-card {
+        min-height: 220px;
+    }
+}
