@@ -23,6 +23,8 @@ body {
 ========================= */
 
 header {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
     padding: 18px 40px;
 
     display: flex;

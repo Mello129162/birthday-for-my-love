@@ -3,7 +3,6 @@
 // =========================
 
 const letter = document.querySelector(".closed-letter");
-const cover = document.querySelector(".letter-cover");
 const letterContent = document.querySelector(".letter-content");
 
 
@@ -13,18 +12,24 @@ const letterContent = document.querySelector(".letter-content");
 
 letter.addEventListener("click", () => {
 
+    // Evita abrir novamente
+    if (letter.classList.contains("opened")) return;
+
+    // Abre a carta
     letter.classList.add("opened");
 
-    // Mostra o conteúdo da carta
+    // Começa a observar os parágrafos
     setTimeout(() => {
-        letterContent.classList.add("visible");
-    }, 600);
+        paragraphs.forEach((paragraph) => {
+            observer.observe(paragraph);
+        });
+    }, 800);
 
 });
 
 
 // =========================
-// REVELAÇÃO DOS PARÁGRAFOS
+// PARÁGRAFOS
 // =========================
 
 const paragraphs = document.querySelectorAll(
@@ -32,8 +37,9 @@ const paragraphs = document.querySelectorAll(
 );
 
 
-// Cria o observer que detecta
-// quando cada parágrafo entra na tela
+// =========================
+// EFEITO DE APARECER / SUMIR
+// =========================
 
 const observer = new IntersectionObserver(
     (entries) => {
@@ -42,14 +48,12 @@ const observer = new IntersectionObserver(
 
             if (entry.isIntersecting) {
 
+                // Entrou na tela
                 entry.target.classList.add("show");
 
             } else {
 
-                // Remove quando sai da tela,
-                // permitindo que apareça novamente
-                // quando voltar a rolar.
-
+                // Saiu da tela
                 entry.target.classList.remove("show");
 
             }
@@ -61,12 +65,3 @@ const observer = new IntersectionObserver(
         threshold: 0.15
     }
 );
-
-
-// Começa a observar cada parágrafo
-
-paragraphs.forEach((paragraph) => {
-
-    observer.observe(paragraph);
-
-});
